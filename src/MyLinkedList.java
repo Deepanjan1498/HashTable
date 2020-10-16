@@ -1,4 +1,9 @@
 
+/**
+ * @author Mentalist
+ *
+ * @param <K>
+ */
 public class MyLinkedList<K> 
 {
 	public INode<K> head;

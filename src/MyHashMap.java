@@ -1,4 +1,10 @@
 
+/**
+ * @author Mentalist
+ *
+ * @param <K>
+ * @param <V>
+ */
 public class MyHashMap<K, V>
 {
 	MyLinkedList<K> myLinkedList;

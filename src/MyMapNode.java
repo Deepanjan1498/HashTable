@@ -38,5 +38,4 @@ public class MyMapNode<K,V> implements INode<K>
 	public String toString() {
 		return "MyMapNode [key=" + key + ", value=" + value + ", next=" + next + "]";
 	}
-
 }
