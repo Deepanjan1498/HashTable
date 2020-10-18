@@ -8,6 +8,12 @@ import java.util.*;
  * @param <K>
  * @param <V>
  */
+/**
+ * @author Mentalist
+ *
+ * @param <K>
+ * @param <V>
+ */
 public class MyLinkedHashMap<K,V> 
 {
 	private final int numOfBuckets;
@@ -52,6 +58,18 @@ public class MyLinkedHashMap<K,V>
 		else
 			myMapNode.setValue(value);
 	}
+	public K remove(K key)
+	{
+		int index=this.getBucketIndex(key);
+		MyLinkedList<K> myLinkedList=this.myBucketArray.get(index);
+		if(myLinkedList==null)
+		{
+			return null;
+		}
+		MyMapNode<K, V> nodeWhichIsDeleted = (MyMapNode<K, V>) myLinkedList.nodeDeletion(key);
+		return (nodeWhichIsDeleted == null) ? null : nodeWhichIsDeleted.getKey();
+	}
+	
 	@Override
 	public String toString()
 	{

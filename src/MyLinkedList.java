@@ -4,6 +4,7 @@
  *
  * @param <K>
  */
+
 public class MyLinkedList<K> 
 {
 	public INode<K> head;
@@ -107,6 +108,24 @@ public class MyLinkedList<K>
 				tempNode = tempNode.getNext();	
 		}
 		return null;
+	}
+	public INode<K> nodeDeletion(K keyDeletion) {
+		INode<K> returnNode = null;
+		INode<K> currentNode = head, previousNode = null;
+		if (currentNode != null && currentNode.getKey().equals(keyDeletion)) { 
+			head = currentNode.getNext();  
+			returnNode = currentNode;
+		} 
+		while (currentNode != null && !currentNode.getKey().equals(keyDeletion)) { 
+			previousNode = currentNode; 
+			currentNode = currentNode.getNext(); 
+		}  
+		if (currentNode != null) { 
+			previousNode.setNext(currentNode.getNext());  
+			returnNode = currentNode;
+		} 
+		return returnNode;
+		
 	}
 	public int size()
 	{
